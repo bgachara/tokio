@@ -1,0 +1,10 @@
+D:\Spectre\jara\dev\tokio\my-redis\target\debug\deps\libasync_stream-9f5f0c65d06a4c46.rmeta: C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\async_stream.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\next.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\yielder.rs
+
+D:\Spectre\jara\dev\tokio\my-redis\target\debug\deps\libasync_stream-9f5f0c65d06a4c46.rlib: C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\async_stream.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\next.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\yielder.rs
+
+D:\Spectre\jara\dev\tokio\my-redis\target\debug\deps\async_stream-9f5f0c65d06a4c46.d: C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\async_stream.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\next.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\yielder.rs
+
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\lib.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\async_stream.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\next.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\async-stream-0.3.5\src\yielder.rs:
