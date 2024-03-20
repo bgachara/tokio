@@ -42,3 +42,24 @@
 - Speeding up CPU bound computations by running them in parallel on several threads. Tokio is designed for IO-bound applications where each individual task spends alot of time waiting on IO.
 - Reading a lot of files, here Tokio provides no advantage compared to an ordinary threadpool, this is because the OS does not provide asynchronous file APIs.
 - Sending a single web request. Tokio gives you an advantage when you want to do many things at once. 
+
+## Concurrency
+
+- Concurrency and parallelism are not the same thing, alternation between two tasks equals concurrency not parallelism. Tokio via its support for asynchronous code allows you to work on many tasks concurrently without 
+  having to work on them in parallel using ordinary threads. Tokio can in fact run many tasks concurrently on a single thread.
+
+## Tasks
+
+- A Tokio task is an asynchronous green thread, they are created by passing an async block to `tokio::spawn`, which returns a JoinHandle which the caller may use to interact with the spawned task. The async block
+  may have a return value which the caller may obtain using .await on the JoinHandle. Awaiting on it returns a Result or Err.
+
+- Tasks are the unit of execution managed by the scheduler, spawning it submits it to the scheduler which then ensures that the task executes when it has work to do. The spawned task may be executed on the same thread
+  as it was spawned or a different runtime thread. Task can also be moved between threads after being spawned.
+
+- Tasks in Tokio are very lightweight, 64 bytes of memory, application should spawn as many as they want. Tasks on tokio have a 'static type lifetime, so it must not contain any references to data owned outside the task.
+
+- By default, variables are not moved into async blocks, use move to change ownership. If a single piece of data must be accessible from more than one task then it must be shared by synchronization
+  primitives such as Arc.
+
+- Tasks spawned by tokio::spawn must implement Send, this allows Tokio to move the tasks between threads while they are suspended at an .await. Tasks are Send when all data that is held across .await calls is Send, 
+  conversely if the state is not Send, then neither is the task. 
