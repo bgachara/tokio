@@ -63,3 +63,23 @@
 
 - Tasks spawned by tokio::spawn must implement Send, this allows Tokio to move the tasks between threads while they are suspended at an .await. Tasks are Send when all data that is held across .await calls is Send, 
   conversely if the state is not Send, then neither is the task. 
+  
+## Shared State
+
+- State is shared in Tokio via: Guard the shared state with a Mutex, Spawn a task to manage the state and use message passing to operate on it.
+- Using a blocking mutex to guard short critical sections is an acceptable strategy when contention is minimal, when a lock is contended, the thread executing the task must block and wait on the mutex. This will not only block 
+  the current task but it will also block all other tasks scheduled on the current thread.
+- If contention on a synchronous mutex becomes a problem, the best fix is rarely to switch to the Tokio mutex, considerations include switching to a dedicated task to manage state and use message passing, shard the mutex
+  or restructure the code to avoid the mutex.
+  
+## Channels
+
+- Tokio provides a couple of channel:
+  - mpsc: multi-producer, single consumer, many values can be sent.
+  - oneshot: one producer, one consumer channel, single value can be sent.
+  - broadcast: multi-producer, multi-consumer, many values can be sent, each receiver sees every value.
+  - watch: single producer, multi consumer, many values can be sent but no history is kept, receivers only see the most recent value.
+  
+## I/O
+
+## Framing
